@@ -1,0 +1,79 @@
+    1  ls /usr/src
+    2  ls -l /usr/src
+    3  gcloud ls
+    4  gsutil ls
+    5  gcloud auth login
+    6  gcloud config set project mythical-temple-300209
+    7  ll
+    8  ls -l
+    9  gsutil ls
+   10  gsutil cp /usr/src/LD_* gs://rado-060577-test-bucket/
+   11  ll
+   12  ls -l
+   13  ls -l /usr/src/
+   14  gcloud ls
+   15  gsutil ls
+   16  gsutil rm gs://rado-060577-test-bucket/
+   17  gsutil rm gs://rado-060577-test-bucket/*
+   18  gsutil ls gs://rado-060577-test-bucket/*
+   19  gsutil ls gs://rado-060577-test-bucket/
+   20  gsutil cp /usr/src/LD_* gs://rado-060577-test-bucket/
+   21  gsutil ls gs://rado-060577-test-bucket/
+   22  gsutil ls gs://rado-060577-test-bucket/
+   23  bq
+   24  bq show 
+   25  gcloud config set project mythical-temple-300209
+   26  bq show 
+   27  bq show bigquery-public-data:samples.shakespeare
+   28  bq query --use_legacy_sql=false 'SELECT
+   29     word,
+   30     SUM(word_count) AS count
+   31   FROM
+   32     `bigquery-public-data`.samples.shakespeare
+   33   WHERE
+   34     word LIKE "%raisin%"
+   35   GROUP BY
+   36     word'
+   37  bq query --use_legacy_sql=false 'SELECT
+   38     word,
+   39     SUM(word_count) AS count
+   40   FROM
+   41     `bigquery-public-data`.samples.shakespeare'
+   42  bq query --use_legacy_sql=false 'SELECT
+   43     word
+   44   FROM
+   45     `bigquery-public-data`.samples.shakespeare'
+   46  bq query --use_legacy_sql=false 'SELECT
+   47     *
+   48   FROM
+   49     `bigquery-public-data`.samples.shakespeare'
+   50  bq ls publicdata
+   51  bq mk tractors
+   52  bq ls
+   53  bq load tractors /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed:speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric,speed_radar:numeric
+   54  bq load mythical-temple-300209.tractors /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed:speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric,speed_radar:numeric
+   55  bq load mythical-temple-300209.tractors /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric,speed_radar:numeric
+   56  clear
+   57  bq load mythical-temple-300209.tractors /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric,speed_radar:numeric
+   58  bq lq
+   59  bq ls
+   60  bq load "mythical-temple-300209".tractors /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric,speed_radar:numeric
+   61  bq load tractors /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric,speed_radar:numeric
+   62  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric,speed_radar:numeric
+   63  ll
+   64  bq ls
+   65  bq ls tractors
+   66  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric
+   67  bq 'select'
+   68  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load,load:numeric,fuel_cons:numeric,speed_kmh:numeric
+   69  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load
+   70  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load:numeric,fuel_cons:numeric,speed_kmh:numeric
+   71  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime,serial_number:string,gps_lat:numeric,gps_lon:numeric,working_hrs:numeric,speed_rpm:numeric,load:numeric
+   72  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:datetime
+   73  bq load tractors.ld1 /usr/src/LD_A2302888_20191016_20191017.csv date_created:string
+   74  exit
+   75  ls -l
+   76  history
+   77  exit
+   78  history 
+

@@ -5,7 +5,21 @@ FROM gcr.io/google.com/cloudsdktool/cloud-sdk
 RUN mkdir /usr/src/l5data
 WORKDIR /usr/src/l5data
 
-#RUN echo "pip install -r /usr/src/web_collector/requirements.txt" > /usr/bin/build
-#RUN echo "python /usr/src/web_collector/main.py" > /usr/bin/run
-#RUN chmod +x /usr/bin/build
-#RUN chmod +x /usr/bin/run
+# Install cron
+RUN apt-get -y install cron
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+
+
+RUN echo "cp *.csv backup" >> /usr/bin/run
+RUN echo "gsutil mv /usr/src/l5data/*.csv gs://tractor-data" >> /usr/bin/run
+RUN echo "date" >> /usr/bin/run
+
+RUN chmod +x /usr/bin/run
+
+# Setup cron job
+RUN (crontab -l ; echo "* * * * *  /usr/bin/run >> /var/log/cron.log") | crontab
+
+# Run the command on container startup
+CMD cron && tail -f /var/log/cron.log

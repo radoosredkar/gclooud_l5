@@ -1,0 +1,3 @@
+#!/bin/bash
+cp *.csv backup
+gsutil mv /usr/src/l5data/*.csv gs://tractor-data
